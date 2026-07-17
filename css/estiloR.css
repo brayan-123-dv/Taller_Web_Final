@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pagina-registrar {
+  background-color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.encabezado img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.encabezado h1 {
+  margin-bottom: 10px;
+}
+
+.encabezado h2 {
+  margin-bottom: 10px;
+}
+
+.encabezado p {
+  margin-bottom: 20px;
+}
+
+/* CONTENEDOR DEL FORMULARIO */
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* FORMULARIO */
+
+.registro_form {
+  width: 700px;
+  max-width: 100%;
+
+  background: white;
+  padding: 35px;
+
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* CAMPOS */
+
+.grupo {
+  display: flex;
+  flex-direction: column;
+}
+
+.grupo label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.grupo input,
+.grupo select {
+  width: 100%;
+  padding: 12px;
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Campo que ocupa las 2 columnas */
+
+.correo {
+  grid-column: 1 / 3;
+}
+
+/* Términos */
+
+.terminos {
+  grid-column: 1 / 3;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Botón */
+
+.registro_form > button {
+  grid-column: 1 / 3;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #bd8551;
+  color: white;
+
+  font-size: 18px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.ver-contra {
+  position: relative;
+  width: 100%;
+}
+
+
+.ver-contra input {
+  width: 100%;
+  padding-right: 45px;
+}
+
+
+.ver-contra button {
+  position: absolute;
+
+  right: 12px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: none;
+  border: none;
+
+  padding: 0;
+
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.cuentita {
+  grid-column: 1 / 3;
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.cuentita a {
+  margin-top: 5px;
+  text-decoration-line: none;
+  color: black;
+  font-weight: bold;
+}
+
+.cuentita a:hover {
+  text-decoration-line: underline;
+}
+
+.registro_form,
+.encabezado {
+  animation: aparecer 0.8s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .registro_form {
+    grid-template-columns: 1fr;
+  }
+
+  .correo,
+  .terminos,
+  button,
+  .cuentita {
+    grid-column: auto;
+  }
+}

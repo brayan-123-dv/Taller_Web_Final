@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar sesión</title>
+
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+
+  <body class="pagina-login">
+    <main>
+      <div class="principal">
+        <!-- LADO IZQUIERDO -->
+        <div class="logo-izquierda">
+          <h1>Bienvenido</h1>
+
+          <img
+            src="https://img.magnific.com/vector-premium/logotipo-restaurante-bistec-tenedor-cuchillo_1240970-33805.jpg?semt=ais_hybrid&w=740&q=80"
+            alt="Logo ResQfood"
+            class="logo"
+          />
+
+          <p>Inicia sesión para continuar</p>
+        </div>
+
+        <!-- LADO DERECHO -->
+        <div class="logearse-d">
+          <h2>INICIAR SESIÓN</h2>
+
+          <form action="index.html" id="form_login">
+            <div class="sesion">
+              <label for="usuario"> Correo electrónico: </label>
+
+              <input type="email" id="usuario" name="usuario1" required />
+
+              <label for="contraseña"> Contraseña: </label>
+              <div class="ver-contra">
+                <input
+                  type="password"
+                  id="contraseña"
+                  name="contraseña1"
+                  required
+                />
+                <button type="button" id="verPassword">👁️</button>
+              </div>
+            </div>
+
+            <div class="iniciar">
+              <button type="submit">Iniciar sesión</button>
+            </div>
+
+            <p class="registro">
+              Si aún no tienes cuenta, regístrate
+              <a href="registrar.html">aquí</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="js/login.js"></script>
+  </body>
+</html>

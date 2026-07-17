@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* CONTENEDOR GENERAL */
+body {
+  display: grid;
+  grid-template-areas:
+    "cabecera"
+    "eslogan"
+    "beneficios"
+    "cta"
+    "footer";
+  grid-template-rows: auto auto auto auto auto;
+}
+
+/* CABECERA */
+
+.cabecera {
+  grid-area: cabecera;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 20px 40px;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgb(34, 33, 33);
+
+  animation: aparecer1 0.6s ease;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(45, 124, 49);
+}
+
+.menu {
+  list-style: none;
+
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.menu li {
+  display: grid;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: rgb(53, 52, 52);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu li a:not(.btn-login):hover {
+  color: rgb(45, 124, 49);
+  transform: translateY(-2px);
+}
+
+.btn-login {
+  background: rgb(46, 128, 50);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background: rgb(27, 95, 32);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ESLOGAN */
+
+.eslogan {
+  grid-area: eslogan;
+  min-height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding: 60px 10%;
+  background: linear-gradient(135deg, rgb(222, 235, 223), white);
+}
+
+.eslogan-texto {
+  display: grid;
+  gap: 20px;
+
+  animation: aparecer2 0.8s ease;
+}
+
+.eslogan-texto h1 {
+  font-size: 3rem;
+  color: rgb(27, 95, 32);
+}
+
+.eslogan-texto p {
+  font-size: 1.2rem;
+  color: rgb(85, 84, 84);
+  max-width: 600px;
+}
+
+.eslogan-botones {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 15px;
+}
+
+.btn-menu {
+  background: rgb(44, 121, 48);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.btn-menu:hover {
+  background: rgb(28, 97, 33);
+  transform: translateY(-3px);
+}
+
+.btn-form_pedido {
+  border: 2px solid rgb(45, 124, 49);
+  color: rgb(47, 128, 51);
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.btn-form_pedido:hover {
+  background: rgb(46, 128, 50);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* BENEFICIOS */
+
+.beneficios {
+  grid-area: beneficios;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 60px 10%;
+  background: white;
+}
+
+.beneficio {
+  display: grid;
+  gap: 15px;
+  justify-items: center;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgb(0, 0, 0);
+  transition: 0.3s;
+  animation: aparecer2 0.8s ease;
+}
+
+.beneficio:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgb(0, 0, 0);
+}
+
+/* CTA */
+
+.cta {
+  grid-area: cta;
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+  padding: 80px 20px;
+  background: rgb(234, 248, 236);
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  animation: aparecer2 0.8s ease;
+}
+
+.cta p {
+  animation: aparecer2 0.8s ease;
+}
+
+.cta .btn-menu {
+  animation: aparecer2 0.8s ease;
+}
+
+/* FOOTER */
+
+.footer {
+  grid-area: footer;
+  display: grid;
+  gap: 30px;
+  background: rgb(27, 94, 32);
+  color: white;
+  padding: 50px 10%;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.pie {
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* ANIMACIONES */
+
+@keyframes aparecer2 {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aparecer1 {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 992px) {
+  .beneficios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .eslogan-texto h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+  .cabecera {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .menu {
+    grid-auto-flow: row;
+    justify-items: center;
+  }
+
+  .beneficios {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .eslogan {
+    padding: 40px 5%;
+  }
+
+  .eslogan-texto h1 {
+    font-size: 2rem;
+  }
+
+  .eslogan-botones {
+    grid-auto-flow: row;
+  }
+}

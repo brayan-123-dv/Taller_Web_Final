@@ -1,0 +1,255 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f6f0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4A3728;
+    padding: 15px 30px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.logo-contenedor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    display: block;
+}
+
+header h1 {
+    font-size: 26px;
+    margin: 0;
+    color: #FFB703;
+    line-height: 1;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #FFB703;
+}
+
+.contenedor-ofertas{
+    padding: 25px;
+}
+
+.encabezado-ofertas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+    
+    background-color: #4A3728; 
+    padding: 30px 40px;
+    border-radius: 12px;
+    border: 3px solid #FFB703; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+}
+
+.encabezado-ofertas h2 {
+    color: #FFFFFF; 
+    font-size: 32px;
+    margin: 0 0 12px 0;
+    font-weight: 700;
+}
+
+.encabezado-ofertas .subtitulo {
+    color: #FFB703; 
+    font-size: 16px;
+    margin: 0;
+    max-width: 700px;
+}
+
+.subtitulo {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+}
+
+.grid-ofertas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.tarjeta-oferta {
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    border: 2px solid #FFB703;
+    animation: entradaTarjeta 0.5s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+}
+
+.tarjeta-oferta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    border-color: #E76C0D;
+}
+
+.tarjeta-oferta img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.info-oferta {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-oferta h3 {
+    margin: 0 0 10px 0;
+    color: #4A3728;
+    font-size: 20px;
+}
+
+.descripcion-corta {
+    font-size: 14px;
+    color: #777;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+
+.precio-antes {
+    text-decoration: line-through;
+    color: #999;
+    margin: 0;
+    font-size: 14px;
+}
+
+.precio-ahora {
+    color: #E76C0D;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 5px 0 20px 0;
+}
+
+.btn-oferta {
+    display: block;
+    text-align: center;
+    background-color: #4A3728;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn-oferta:hover {
+    background-color: #E76C0D;
+}
+
+.badge-descuento {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #E76C0D;
+    color: white;
+    padding: 6px 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 14px;
+    z-index: 10;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.animar-pulso {
+    animation: pulsoCandente 2s infinite ease-in-out;
+}
+
+@keyframes pulsoCandente {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); background-color: #FFB703; color: #4A3728; }
+    100% { transform: scale(1); }
+}
+
+@keyframes entradaTarjeta {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+    background-color: #4A3728;
+    color: white;
+    padding: 30px 20px 10px 20px;
+    margin-top: 40px;
+}
+
+.pie-contenedor {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.pie-columna {
+    flex: 1;
+    min-width: 250px;
+}
+
+.pie-columna h3 {
+    color: #FFB703;
+    border-bottom: 2px solid #FFB703;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.pie-columna p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.pie-derechos {
+    text-align: center;
+    border-top: 1px solid #6d523d;
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
